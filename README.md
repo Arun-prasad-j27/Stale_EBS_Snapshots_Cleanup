@@ -1,3 +1,4 @@
+
 # AWS Cloud Cost Optimization - Stale EBS Snapshot Cleanup
 
 ## Overview
@@ -8,10 +9,10 @@ This project focuses on optimizing AWS cloud storage costs by identifying and re
 
 The Lambda function performs the following steps:
 
-The Lambda function fetches all EBS snapshots owned by the same account ('self') and also retrieves a list of active EC2 instances (running and stopped). For each snapshot, it checks if the associated volume (if exists) is not associated with any active instance. If it finds a stale snapshot, it deletes it, effectively optimizing storage costs.
+The Lambda function fetches all EBS snapshots owned by the same account and also retrieves a list of active EC2 instances (running and stopped). For each snapshot, it checks if the associated volume (if exists) is not associated with any active instance. If it finds a stale snapshot, it deletes it, effectively optimizing storage costs.
 
 1. **Fetch Snapshots:**
-   - Retrieves all EBS snapshots owned by the AWS account ('self').
+   - Retrieves all EBS snapshots owned by the AWS account .
 
 2. **Get Active EC2 Instances:**
    - Fetches a list of active EC2 instances, including those in a running or stopped state.
@@ -50,9 +51,20 @@ No additional installation steps are needed. Simply deploy the Lambda function a
 
 Contributions to enhance and improve this cost optimization project are welcome! Feel free to submit issues or pull requests.
 
-
 ## Acknowledgments
 
 - AWS SDK for Python (Boto3)
 - Inspired by the need for EBS snapshot cost optimization.
 
+
+1. **Lambda Function Execution Flow:**
+   ![Lambda Function Execution Flow](images/lambda_execution_flow.png)
+
+2. **AWS Console Screenshot:**
+   ![AWS Console Screenshot](images/aws_console.png)
+
+3. **AWS Modifying Permissions  Screenshot:**
+   ![AWS Console Screenshot](images/permissions.png)   
+
+4. **AWS lambda_execution_result Screenshot:**
+   ![AWS Console Screenshot](images/lambda_execution_result.png)
